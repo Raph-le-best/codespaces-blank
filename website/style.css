@@ -1,0 +1,31 @@
+h1 {
+  color: #a5b4fc;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: #1f2039;
+}
+p {
+  color: white;
+}
+ul {
+  color: white;
+}
+h2 {
+  color: #4349fc;
+}
+h3 {
+  color: #1d23dd;
+}
+h4 {
+  color: #1d23dd;
+}
+footer {
+  color: #f58607;
+}
+section {
+  border: ridge black, 50px;
+}
+strong {
+  color: #ed07f5;
+}
