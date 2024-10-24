@@ -2,50 +2,81 @@
 <html lang="fr">
   <head>
     <title>formulaire de Timeo</title>
-    <link href="formulaire2.css" rel="stylesheet" />
+
     <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link href="common.css" rel="stylesheet" />
+    <link href="formulaire2.css" rel="stylesheet" />
   </head>
 
-  
-  </body><body>
+  <body>
     <h1>Noter Timeo !!!</h1>
-        
-   
+
     <form action="" method="get">
       <p>
-        sur une échelle de 1 à 10 noter la beaté de Timeo :<br />
-        <input type="radio" name="beaute" value="5 (moyen)" id="5 (moyen)" />
-        <label for="5 (moyen)">5 (moyen)</label><br />
-        <input type="radio" name="beaute" value="7 (pas mal)5" id="7 (pas mal)" />
-        <label for="7 (pas mal)">7 (pas mal)</label><br />
-        <input type="radio" name="beaute" value="10 (il est trop beau)" id="10 (il est trop beau)" />
-        <label for="10 (il est trop beau)">10 (il est trop beau)</label><br />
-        <input type="radio" name="beaute" value="100 (le best)" id="100 (le best)" />
-        <label for="100 (le best)">100 (le best)</label>
+        sur une échelle de 1 à 100 noter la beauté de Timeo :<br />
+        <input type="radio" name="beaute" value="5" id="beaute-5" required />
+        <label for="beaute-5">5 (moyen)</label><br />
+
+        <input type="radio" name="beaute" value="7" id="beaute-7" />
+        <label for="beaute-7">7 (pas mal)</label><br />
+
+        <input type="radio" name="beaute" value="10" id="beaute-10" />
+        <label for="beaute-10">10 (il est trop beau)</label><br />
+
+        <input type="radio" name="beaute" value="100" id="beaute-100" />
+        <label for="beaute-100">100 (le best)</label>
       </p>
 
       <p>
-        sur une échelle de 1 à 10 noter le comportement de Timeo :<br />
-        <input type="radio" name="comportement" value="1 (racaille)" id="1 (racaille)" />
-        <label for="1 (racaille)">1 (racaille)</label><br />
-        <input type="radio" name="comportement" value="5 (moyen)" id="5 (moyen)" />
-        <label for="5 (moyen)">5 (moyen)</label><br />
-        <input type="radio" name="comportement" value="10 (sage)" id="10 (sage)" />
-        <label for="10 (sage)">10 (sage)</label><br />
-        <input type="radio" name="comportement" value="100 (impossible sorry)" id="100 (impossible sorry)" />
-        <label for="100 (impossible sorry)">100 (impossible sorry)</label>
-      </p>
-      <p>
-        Et c'est deja terminé ,c'etait comment ? :<br />
-      <input type="radio" name="note" value="incroyable" id="incroyable" />
-      <label for="incroyable">incroyable</label><br />
-      <input type="radio" name="note" value="GG" id="GG" />
-      <label for="GG">GG</label><br />
-      <input type="radio" name="note" value="pas mal" id="pas mal" />
-      <label for="pas mal">pas mal</label><br />
-      
-    </p>
+        sur une échelle de 1 à 100 noter le comportement de Timeo :<br />
+        <input type="radio" name="comportement" value="1" id="comportement-1" />
+        <label for="comportement-1">1 (racaille)</label><br />
 
+        <input type="radio" name="comportement" value="5" id="comportement-5" />
+        <label for="comportement-5">5 (moyen)</label><br />
+
+        <input
+          type="radio"
+          name="comportement"
+          value="10"
+          id="comportement-10"
+        />
+        <label for="comportement-10">10 (sage)</label><br />
+
+        <input
+          type="radio"
+          name="comportement"
+          value="100"
+          id="comportement-100"
+        />
+        <label for="comportement-100">100 (impossible sorry)</label>
+      </p>
+
+      <p>
+        Et c'est deja terminé, c'etait comment ? :<br />
+        <input type="radio" name="note" value="200" id="note-incroyable" />
+        <label for="incroyable">incroyable</label><br />
+
+        <input type="radio" name="note" value="100" id="note-GG" />
+        <label for="GG">GG</label><br />
+
+        <input type="radio" name="note" value="10" id="note-pas mal" />
+        <label for="pas mal">pas mal</label><br />
+      </p>
+
+      <input type="submit" class="btn btn-danger my-btn" />
+
+      <a href="index.html" class="btn btn-primary">
+        Clique ici pour retourner sur la page d'acceuil</a
+      >
     </form>
-   <h2> Fin </h2>
+    <h2>Fin</h2>
+  </body>
 </html>

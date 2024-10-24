@@ -1,66 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
-   <head>
-<title>formulaire de Zinedine</title>
-<link href="formulaire1.css" rel="stylesheet">
-<meta charset="utf-8" >
-   </head>
+  <head>
+    <title>formulaire de Zinedine</title>
+    <meta charset="utf-8" />
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link href="common.css" rel="stylesheet" />
+
+    <link href="formulaire1.css" rel="stylesheet" />
+  </head>
+
+  <body>
     <h1>Noter Zinedine !!!</h1>
-        
+
     <form>
       <p>
-        sur une échelle de 1 à 10 noter la beaté de Zinedine :<br />
+        sur une échelle de 1 à 100 noter la beauté de Zinedine :<br />
         <input type="radio" name="beaute" value="5" id="beaute-5" required />
         <label for="beaute-5">5 (moyen)</label><br />
-        
+
         <input type="radio" name="beaute" value="7" id="beaute-7" />
         <label for="beaute-7">7 (pas mal)</label><br />
-        
+
         <input type="radio" name="beaute" value="10" id="beaute-10" />
         <label for="beaute-10">10 (il est trop beau)</label><br />
-        
+
         <input type="radio" name="beaute" value="100" id="beaute-100" />
         <label for="beaute-100">100 (le best)</label>
       </p>
       <p>
-        sur une échelle de 1 à 10 noter le charisme de Zinedine :<br />
-        <input type="radio" name="charisme" value="5 " id="charisme-5" required/>
+        sur une échelle de 1 à 100 noter le charisme de Zinedine :<br />
+        <input
+          type="radio"
+          name="charisme"
+          value="5"
+          id="charisme-5"
+          required
+        />
         <label for="5 (moyen)">5 (on l'ecoute quand il parle)</label><br />
-        <input type="radio" name="charisme" value="7 " id="charisme-7 " />
+
+        <input type="radio" name="charisme" value="7" id="charisme-7" />
         <label for="7 (pas mal)">7 (pas mal)</label><br />
-        <input type="radio" name="charisme" value="10 " id="charisme-10 " />
+
+        <input type="radio" name="charisme" value="10" id="charisme-10" />
         <label for="10 (le meneur)">10 (le meneur)</label><br />
-        <input type="radio" name="charisme" value="100 " id="charisme-100 " />
-        <label for="100 (le dieu charismatique)">100 (le dieu charismatique)</label>
+
+        <input type="radio" name="charisme" value="100" id="charisme-100" />
+        <label for="100 (le dieu charismatique)"
+          >100 (le dieu charismatique)</label
+        >
       </p>
 
-
       <p>
-        sur une échelle de 1 à 10 noter le comportement de Zinedine :<br />
-        <input type="radio" name="comportement" value="1 " id="comportement-1 " required/>
-        <label for="1 (racaille)">1 (racaille)</label><br />
-        <input type="radio" name="comportement" value="5 " id="comportement-5 " />
-        <label for="5 (moyen)">5 (moyen)</label><br />
-        <input type="radio" name="comportement" value="10 " id="comportement-10 " />
-        <label for="10 (sage)">10 (sage)</label><br />
-        <input type="radio" name="comportement" value="100 " id="comportement-100 " />
-        <label for="100 (impossible sorry)">100 (impossible sorry)</label>
+        sur une échelle de 1 à 100 noter le comportement de Zinedine :<br />
+        <input
+          type="radio"
+          name="comportement"
+          value="1"
+          id="comportement-1"
+          required
+        />
+        <label for="comportement-1">1 (racaille)</label><br />
+
+        <input type="radio" name="comportement" value="5" id="comportement-5" />
+        <label for="comportement-5">5 (moyen)</label><br />
+
+        <input
+          type="radio"
+          name="comportement"
+          value="10"
+          id="comportement-10"
+        />
+        <label for="comportement-10">10 (sage)</label><br />
+
+        <input
+          type="radio"
+          name="comportement"
+          value="100"
+          id="comportement-100"
+        />
+        <label for="comportement-100">100 (impossible sorry)</label>
       </p>
       <p>
-        Et c'est deja terminé ,c'etait comment ? :<br />
-      <input type="radio" name="note" value="1000" id="note-incroyable" required/>
-      <label for="incroyable">incroyable</label><br />
-      <input type="radio" name="note" value="100" id="note-GG" />
-      <label for="GG">GG</label><br />
-      <input type="radio" name="note" value="10" id="note-pas mal" />
-      <label for="pas mal">pas mal</label><br />
-      
-    </p>
+        Et c'est deja terminé, c'etait comment ? :<br />
+        <input
+          type="radio"
+          name="note"
+          value="200"
+          id="note-incroyable"
+          required
+        />
+        <label for="note-incroyable">incroyable</label><br />
 
-    <input type="submit">
-    
+        <input type="radio" name="note" value="100" id="note-GG" />
+        <label for="note-GG">GG</label><br />
 
+        <input type="radio" name="note" value="10" id="note-pas-mal" />
+        <label for="note-pas-mal">pas mal</label><br />
+      </p>
+
+      <!-- <input type="submit" class="btn btn-danger my-btn" /> -->
+
+      <button type="button" class="btn btn-danger my-btn" onclick="next()">
+        Valider et passer à la suite
+      </button>
+
+      <a href="index.html" class="btn btn-primary">
+        Clique ici pour retourner sur la page d'acceuil
+      </a>
     </form>
-   <h2> Fin </h2>
-   </body>
+    <h2>Fin</h2>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>Beauté : <span id="beaute-value"></span></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function next() {
+      var myModal = new bootstrap.Modal(
+        document.getElementById("exampleModal"),
+        {
+          keyboard: false,
+        }
+      );
+
+      var beauty = parseInt(
+        [...document.querySelectorAll('input[name="beaute"]')].find(
+          (el) => el.checked
+        ).value
+      );
+
+      var charisma = parseInt(
+        [...document.querySelectorAll('input[name="charisme"]')].find(
+          (el) => el.checked
+        ).value
+      );
+
+      var behavior = parseInt(
+        [...document.querySelectorAll('input[name="comportement"]')].find(
+          (el) => el.checked
+        ).value
+      );
+
+      document.getElementById("beaute-value").innerHTML = beauty;
+
+      myModal.show();
+    }
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
