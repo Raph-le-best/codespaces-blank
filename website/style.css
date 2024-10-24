@@ -1,10 +1,14 @@
 h1 {
   color: #a5b4fc;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue
+  
 }
 body {
   background-color: #1f2039;
 }
+
 p {
   color: white;
 }
@@ -13,12 +17,15 @@ ul {
 }
 h2 {
   color: #4349fc;
+  text-align: center;
 }
 h3 {
   color: #1d23dd;
+  text-align: center;
 }
 h4 {
   color: #1d23dd;
+  text-align: center;
 }
 footer {
   color: #f58607;
@@ -28,4 +35,9 @@ section {
 }
 strong {
   color: #ed07f5;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
 }

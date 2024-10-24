@@ -9,17 +9,75 @@
       crossorigin="anonymous"
     />
     <link href="style.css" rel="stylesheet" />
+    <meta charset="utf-8" />
   </head>
 
   <body>
     <header>
       <h1>Bienvenue sur mon site web</h1>
+      <br />
 
       <h2>Ce site web parlera des changements en l'absence de Lucolux.</h2>
     </header>
 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="formulaire1.html"
+                    >formulaire sur Zinedine</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="formulaire2.html"
+                    >formulaire sur Timeo</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">Search</button
+            ><!-- java script pour que ca fonctionne-->
+          </form>
+        </div>
+      </div>
+    </nav>
+
     <main>
-      <section>
+      <section class="lignebouton">
         <h3>Le changement de ces amis proche</h3>
 
         <p>
@@ -39,12 +97,14 @@
           <li>écrire sur <strong> 3 ordinateurs</strong></li>
           <li>Travailler dans un bureau</li>
         </ul>
-        <button type="button" class="btn btn-primary">
-          Clique ici pour voir un formulaire sur Zinedine
-        </button>
-        <button type="button" class="btn btn-primary">
-          Clique ici pour voir un formulaire sur Timeo
-        </button>
+        <div class="buttons-container">
+          <a href="formulaire1.html" class="btn btn-primary">
+            Clique ici pour voir un formulaire sur Zinedine
+          </a>
+          <a href="formulaire2.html" class="btn btn-primary">
+            Clique ici pour voir un formulaire sur Timeo
+          </a>
+        </div>
       </section>
       <section>
         <h3>Le changement pour la cantine le midi</h3>
@@ -73,6 +133,17 @@
       </section>
     </main>
 
-    <footer>Site construit par Raphael</footer>
+    <footer>
+      <p>Site construit par Raphael</p>
+      <p>
+        Ce qu'il y a ecrit dans la première partie est une blague surtout pour
+        le Z et le T
+      </p>
+    </footer>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
 </html>
