@@ -19,7 +19,12 @@
   <body>
     <h1>Noter Zinedine !!!</h1>
 
-    <form>
+    <form id="form">
+      <p>
+        <label for="username">Quel est ton nom ?</label><br />
+        <input type="type" name="username" id="username" />
+      </p>
+
       <p>
         sur une échelle de 1 à 100 noter la beauté de Zinedine :<br />
         <input type="radio" name="beaute" value="5" id="beaute-5" required />
@@ -105,8 +110,6 @@
         <label for="note-pas-mal">pas mal</label><br />
       </p>
 
-      <!-- <input type="submit" class="btn btn-danger my-btn" /> -->
-
       <button type="button" class="btn btn-danger my-btn" onclick="next()">
         Valider et passer à la suite
       </button>
@@ -137,7 +140,8 @@
             ></button>
           </div>
           <div class="modal-body">
-            <div>Beauté : <span id="beaute-value"></span></div>
+            <div id="modal-message-2"></div>
+            <div id="modal-message-1"></div>
           </div>
           <div class="modal-footer">
             <button
@@ -145,9 +149,8 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Fermer
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -156,12 +159,8 @@
 
   <script>
     function next() {
-      var myModal = new bootstrap.Modal(
-        document.getElementById("exampleModal"),
-        {
-          keyboard: false,
-        }
-      );
+      var form = document.getElementById("form");
+      form.reportValidity();
 
       var beauty = parseInt(
         [...document.querySelectorAll('input[name="beaute"]')].find(
@@ -181,8 +180,46 @@
         ).value
       );
 
-      document.getElementById("beaute-value").innerHTML = beauty;
+      var totalScore = beauty + charisma + behavior;
 
+      var message1 = "";
+
+      var nom = document.getElementById("username").value;
+      var message2 = "Salut " + nom;
+
+      if (totalScore < 15) {
+        console.log("Premier if");
+        message1 = "Bouhhhhh";
+        openMyModal(message1, message2);
+        return;
+      }
+
+      if (beauty > 50 && charisma > 4) {
+        console.log("2eme if");
+        message1 = "";
+      } else if (totalScore > 200) {
+        console.log("3eme if");
+        message1 = " ..... ";
+      } else if (totalScore > 100) {
+        console.log("4eme if");
+        message1 = "..... ";
+      } else {
+        console.log("5eme if");
+        message1 = "";
+      }
+
+      openMyModal(message1, message2);
+    }
+
+    function openMyModal(messageForModal1, messageForModal2) {
+      var myModal = new bootstrap.Modal(
+        document.getElementById("exampleModal"),
+        {
+          keyboard: false,
+        }
+      );
+      document.getElementById("modal-message-1").innerHTML = messageForModal1;
+      document.getElementById("modal-message-2").innerHTML = messageForModal2;
       myModal.show();
     }
   </script>
