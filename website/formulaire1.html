@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>formulaire de Zinedine</title>
+    <title>formulaire chats</title>
     <meta charset="utf-8" />
 
     <link
@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <h1>Noter Zinedine !!!</h1>
+    <h1>Noter les chats !!!</h1>
 
     <form id="form">
       <p>
@@ -26,7 +26,7 @@
       </p>
 
       <p>
-        sur une échelle de 1 à 100 noter la beauté de Zinedine :<br />
+        sur une échelle de 1 à 100 noter la beauté des chats :<br />
         <input type="radio" name="beaute" value="5" id="beaute-5" required />
         <label for="beaute-5">5 (moyen)</label><br />
 
@@ -40,7 +40,7 @@
         <label for="beaute-100">100 (le best)</label>
       </p>
       <p>
-        sur une échelle de 1 à 100 noter le charisme de Zinedine :<br />
+        sur une échelle de 1 à 100 noter le charisme des chats :<br />
         <input
           type="radio"
           name="charisme"
@@ -63,7 +63,7 @@
       </p>
 
       <p>
-        sur une échelle de 1 à 100 noter le comportement de Zinedine :<br />
+        sur une échelle de 1 à 100 noter le comportement des chats :<br />
         <input
           type="radio"
           name="comportement"
@@ -185,27 +185,24 @@
       var message1 = "";
 
       var nom = document.getElementById("username").value;
-      var message2 = "Salut " + nom;
+      var message2 = "" + nom;
 
       if (totalScore < 15) {
         console.log("Premier if");
-        message1 = "Bouhhhhh";
+        message1 = "t'aime pas les chats ?";
         openMyModal(message1, message2);
         return;
       }
 
-      if (beauty > 50 && charisma > 4) {
+      if (beauty > 99 && charisma > 99 && behavior > 99) {
         console.log("2eme if");
-        message1 = "";
-      } else if (totalScore > 200) {
-        console.log("3eme if");
-        message1 = " ..... ";
-      } else if (totalScore > 100) {
+        message1 = "toi aussi tu les trouves trop beau !";
+      } else if (beauty < 8 && charisma < 8 && behavior < 6) {
         console.log("4eme if");
-        message1 = "..... ";
+        message1 = "t'aime beaucoup les chats ! ";
       } else {
         console.log("5eme if");
-        message1 = "";
+        message1 = "t'adore les chats";
       }
 
       openMyModal(message1, message2);

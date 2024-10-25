@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>formulaire de Timeo</title>
+    <title>formulaire chiens</title>
 
     <meta charset="utf-8" />
     <link
@@ -16,11 +16,15 @@
   </head>
 
   <body>
-    <h1>Noter Timeo !!!</h1>
+    <h1>Noter les chiens !!!</h1>
 
-    <form action="" method="get">
+    <form id="form">
       <p>
-        sur une échelle de 1 à 100 noter la beauté de Timeo :<br />
+        <label for="username">Quel est ton nom ?</label><br />
+        <input type="type" name="username" id="username" />
+      </p>
+      <p>
+        sur une échelle de 1 à 100 noter la beauté des chiens :<br />
         <input type="radio" name="beaute" value="5" id="beaute-5" required />
         <label for="beaute-5">5 (moyen)</label><br />
 
@@ -35,8 +39,14 @@
       </p>
 
       <p>
-        sur une échelle de 1 à 100 noter le comportement de Timeo :<br />
-        <input type="radio" name="comportement" value="1" id="comportement-1" />
+        sur une échelle de 1 à 100 noter le comportement des chiens :<br />
+        <input
+          type="radio"
+          name="comportement"
+          value="1"
+          id="comportement-1"
+          required
+        />
         <label for="comportement-1">1 (racaille)</label><br />
 
         <input type="radio" name="comportement" value="5" id="comportement-5" />
@@ -71,12 +81,111 @@
         <label for="pas mal">pas mal</label><br />
       </p>
 
-      <input type="submit" class="btn btn-danger my-btn" />
-
       <a href="index.html" class="btn btn-primary">
         Clique ici pour retourner sur la page d'acceuil</a
       >
+      <button type="button" class="btn btn-danger my-btn" onclick="next()">
+        Valider et passer à la suite
+      </button>
     </form>
     <h2>Fin</h2>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="modal-message-2"></div>
+            <div id="modal-message-1"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+
+  <script>
+    function next() {
+      var form = document.getElementById("form");
+      form.reportValidity();
+
+      var beauty = parseInt(
+        [...document.querySelectorAll('input[name="beaute"]')].find(
+          (el) => el.checked
+        ).value
+      );
+
+      var behavior = parseInt(
+        [...document.querySelectorAll('input[name="comportement"]')].find(
+          (el) => el.checked
+        ).value
+      );
+
+      var totalScore = beauty + behavior;
+
+      var message1 = "";
+
+      var nom = document.getElementById("username").value;
+      var message2 = "" + nom;
+
+      if (totalScore < 15) {
+        console.log("Premier if");
+        message1 = "t'aime pas les chiens ?";
+        openMyModal(message1, message2);
+        return;
+      }
+
+      if (beauty > 99 && behavior > 99) {
+        console.log("2eme if");
+        message1 = "toi aussi tu les trouves trop beau !";
+      } else if (beauty < 8 && behavior < 6) {
+        console.log("4eme if");
+        message1 = "t'aime beaucoup les chiens ! ";
+      } else {
+        console.log("5eme if");
+        message1 = "t'adore les chiens";
+      }
+
+      openMyModal(message1, message2);
+    }
+
+    function openMyModal(messageForModal1, messageForModal2) {
+      var myModal = new bootstrap.Modal(
+        document.getElementById("exampleModal"),
+        {
+          keyboard: false,
+        }
+      );
+      document.getElementById("modal-message-1").innerHTML = messageForModal1;
+      document.getElementById("modal-message-2").innerHTML = messageForModal2;
+      myModal.show();
+    }
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
 </html>
